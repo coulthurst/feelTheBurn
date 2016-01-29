@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="feelTheBurn.css">
+    <script src="feelTheBurn.js"></script>
+    
+    <title>Feel The Burn</title>
+    
+</head>
+<body >
+    <div class="wrapper">
+    <div class="form" >
+        <div>
+        </br>
+            <center>
+            <h2>Feel The Burn</h1>
+                
+            <p>Enter your name and weight with no spaces to determine your workout.</p>
+            </center>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <input id="name" type="text" placeholder="name" class="wicon" />
+                </li>
+                <li>
+                    <input id="weight" type="text" placeholder="weight" class="wicon"/>
+                </li>
+            </ul>
+        </div>
+
+        <div class="actions">
+            <input class="button red " type="button" id="add" value="Submit" onclick="addRow()">   
+            <input class="button red " type="button" id="add" value="Clear" onclick="clearTable()"> 
+        </div>
+</div>
+    
+    </div>
+    
+<div class="totalBurned"><h2>Total Calories Burned: 0<span id="totalCaloriesBurned"></span></h2></div>
+    
+    
+   
+        <div>
+             <table id="myTableData" class="burnTable" cellpadding="4">
+                        <tr>
+                            <th>Letter</th>
+                            <th>Exercise</th>
+                            <th>Reps</th>
+                            <th>Calories Burned</th>
+                        </tr>
+                        
+             </table>
+
+         </div>
+
+    
+    
+
+    
+
+</body>
+</html>
