@@ -39,6 +39,8 @@ exerciseArray["z"] = { name: "push ups", amount: 20, mets: 4 };
 
 function addRow() {
 
+    clearTable();
+    
     var myName = document.getElementById("name");
     var weight = document.getElementById("weight");
     var table = document.getElementById("myTableData");
