@@ -6,7 +6,7 @@ body {
 }
 
 .form {
-    position: absolute;
+    position: fixed;
     width: 400px;
     left: 100px;
     top: 100px;
