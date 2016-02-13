@@ -1,65 +1,80 @@
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" ng-app="feelTheBurn">
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="feelTheBurn.css">
-    <script src="feelTheBurn.js"></script>
-    
     <title>Feel The Burn</title>
-    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="initial-scale=1" />
 </head>
-<body >
-    <div class="wrapper">
-    <div class="form" >
-        <div>
-        </br>
-            <center>
-            <h2>Feel The Burn</h1>
-                
-            <p>Enter your name and weight with no spaces to determine your workout.</p>
-            </center>
-        </div>
-        <div class="content">
-            <ul>
-                <li>
-                    <input id="name" type="text" placeholder="name" class="wicon" />
-                </li>
-                <li>
-                    <input id="weight" type="text" placeholder="weight" class="wicon"/>
-                </li>
-            </ul>
-        </div>
+    
+<body class="md-padding"   ng-controller="MainController" >
+    <div layout="row" layout-sm="column" >
+        <div layout="column">
+            
+            <md-card class="md-padding" >
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Feel The Burn</span>
+                            </br>
+                        <span class="md-subhead">Enter your name and weight with no spaces to determine your workout.</span>
+                    </md-card-title-text>
+                </md-card-title>
 
-        <div class="actions">
-            <input class="button red " type="button" id="add" value="Submit" onclick="addRow()">   
-            <input class="button red " type="button" id="add" value="Clear" onclick="clearTable()"> 
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="user.name">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Weight</label>
+                    <input ng-model="user.weight">
+                </md-input-container>
+
+                 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                     <md-button class="md-primary" ng-click="calculateWorkout()">Submit</md-button>
+                     <md-button ng-click="clearTable()">Clear</md-button>
+                </section>
+            </md-card>
+        
         </div>
+        <div layout="column">
+            
+            <md-card class="md-padding">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Total calories burned: </span>
+                        <span class="md-subhead"><b>{{user.totalCal}}</b></span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+
+            <md-card class="md-padding">
+                <table id="myTableData" cellpadding="10">
+                    <tr>
+                        <th>Letter</th>
+                        <th>Exercise</th>
+                        <th>Reps</th>
+                        <th>Calories Burned</th>
+                    </tr>
+                 </table>
+             </md-card>
+            
+    </div>
 </div>
     
-    </div>
     
-<div class="totalBurned"><h2>Total Calories Burned: 0<span id="totalCaloriesBurned"></span></h2></div>
-    
-    
-   
-        <div>
-             <table id="myTableData" class="burnTable" cellpadding="4">
-                        <tr>
-                            <th>Letter</th>
-                            <th>Exercise</th>
-                            <th>Reps</th>
-                            <th>Calories Burned</th>
-                        </tr>
-                        
-             </table>
+    <!-- Angular Material Dependencies -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
-         </div>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.js"></script>
 
+    <script src="js/main.js"></script>
+    <script src="js/materialConfig.js"></script>
+    <script src="js/controllers/mainController.js"></script>
     
-    
-
-    
-
 </body>
 </html>
